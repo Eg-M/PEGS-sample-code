@@ -6,6 +6,8 @@
    description of how to make a temperature sensor, VBat or Vref measurement.
 */
 
+Timer t;
+
 AnalogIn   Sens1(A0);
 AnalogIn   Sens2(A1);
 AnalogIn   Sens3(A2);
@@ -16,9 +18,11 @@ AnalogIn   Sens6(A5);
 Serial pc(USBTX, USBRX); // tx, rx
 
 int main()
-{
+{       
+    t.start();
     //printf("\nSTM32 ADC internal channels reading example\n");
     while(1) {
+        
      
         //char c = pc.getc();
         //if (c =='s')
@@ -26,14 +30,16 @@ int main()
             //printf("First_Sensor\n");
             //while (1)
             //{
-       
+        if (!(t.read_ms()%1000))
+        {
         printf("%f,",Sens1.read());
         printf("%f%,",Sens2.read());
         printf("%f%, ", Sens3.read());
         printf("%f%, ", Sens4.read());
         printf("%f%, ", Sens5.read());
         printf("%f%\n", Sens6.read());
-        thread_sleep_for(1000);
+        }
+        //thread_sleep_for(1000);
        // wait(1);
     //}
         //}
