@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "cstdio": "cpp"
+        "cstdio": "cpp",
+        "mstd_type_traits": "cpp",
+        "mstd_utility": "cpp",
+        "functional": "cpp",
+        "*.tcc": "cpp",
+        "type_traits": "cpp"
     }
 }
