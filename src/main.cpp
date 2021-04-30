@@ -15,6 +15,10 @@ AnalogIn   Sens4(A3);
 AnalogIn   Sens5(A4);
 AnalogIn   Sens6(A5);
 
+float Vin = 3.3;
+float Res1 = 1.775;
+float filter_val1,filter_val2,filter_val3,filter_val4,filter_val5,filter_val6 = 0;
+uint16_t Max_res = 0xFFFF;
 Serial pc(USBTX, USBRX); // tx, rx
 
 int main()
@@ -32,12 +36,43 @@ int main()
             //{
         if (!(t.read_ms()%1000))
         {
-        printf("%f,",Sens1.read());
-        printf("%f%,",Sens2.read());
-        printf("%f%, ", Sens3.read());
-        printf("%f%, ", Sens4.read());
-        printf("%f%, ", Sens5.read());
-        printf("%f%\n", Sens6.read());
+            
+             
+
+        float Vout1 = (filter_val1/Max_res)*Vin;
+        float Res_PBGS_1 = Res1*Vout1/(Vin-Vout1);
+
+        float Vout2 = (filter_val2/Max_res)*Vin;
+        float Res_PBGS_2 = Res1*Vout2/(Vin-Vout2);
+
+        float Vout3 = (filter_val3/Max_res)*Vin;
+        float Res_PBGS_3 = Res1*Vout3/(Vin-Vout3);
+
+        float Vout4 = (filter_val4/Max_res)*Vin;
+        float Res_PBGS_4 = Res1*Vout4/(Vin-Vout4);
+
+        float Vout5 = (filter_val5/Max_res)*Vin;
+        float Res_PBGS_5 = Res1*Vout5/(Vin-Vout5);
+
+        float Vout6 = (filter_val6/Max_res)*Vin;
+        float Res_PBGS_6 = Res1*Vout6/(Vin-Vout6); 
+
+        printf("%f,",Res_PBGS_1);
+        printf("%f,",Res_PBGS_2);
+        printf("%f, ", Res_PBGS_3);
+        printf("%f, ", Res_PBGS_4);
+        printf("%f, ", Res_PBGS_5);
+        printf("%f\n", Res_PBGS_6);
+
+        for (u_int8_t i = 0; i < 20; i++)
+        {
+            filter_val1 += (float(Sens1.read_u16()) - filter_val1) * 0.1;
+            filter_val2 += (float(Sens2.read_u16()) - filter_val2) * 0.1;
+            filter_val3 += (float(Sens3.read_u16()) - filter_val3) * 0.1;
+            filter_val4 += (float(Sens4.read_u16()) - filter_val4) * 0.1;
+            filter_val5 += (float(Sens5.read_u16()) - filter_val5) * 0.1;
+            filter_val6 += (float(Sens6.read_u16()) - filter_val6) * 0.1;
+        }
         }
         //thread_sleep_for(1000);
        // wait(1);
