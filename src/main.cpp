@@ -16,7 +16,8 @@ AnalogIn   Sens5(A4);
 AnalogIn   Sens6(A5);
 
 float Vin = 3.3;
-float Res1 = 1.775;
+//float Res1 = 1.775;
+float Res1 = 5.8;
 float filter_val1,filter_val2,filter_val3,filter_val4,filter_val5,filter_val6 = 0;
 uint16_t Max_res = 0xFFFF;
 Serial pc(USBTX, USBRX); // tx, rx
