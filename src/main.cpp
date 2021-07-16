@@ -17,7 +17,7 @@ AnalogIn   Sens6(A5);
 
 float Vin = 3.3;
 //float Res1 = 1.775;
-float Res1 = 5.8;
+float Res1[6] = {5.743,5.469,5.469,5.469,5.469,5.469};
 float filter_val1,filter_val2,filter_val3,filter_val4,filter_val5,filter_val6 = 0;
 uint16_t Max_res = 0xFFFF;
 Serial pc(USBTX, USBRX); // tx, rx
@@ -41,22 +41,22 @@ int main()
              
 
         float Vout1 = (filter_val1/Max_res)*Vin;
-        float Res_PBGS_1 = Res1*Vout1/(Vin-Vout1);
+        float Res_PBGS_1 = Res1[0]*Vout1/(Vin-Vout1);
 
         float Vout2 = (filter_val2/Max_res)*Vin;
-        float Res_PBGS_2 = Res1*Vout2/(Vin-Vout2);
+        float Res_PBGS_2 = Res1[1]*Vout2/(Vin-Vout2);
 
         float Vout3 = (filter_val3/Max_res)*Vin;
-        float Res_PBGS_3 = Res1*Vout3/(Vin-Vout3);
+        float Res_PBGS_3 = Res1[2]*Vout3/(Vin-Vout3);
 
         float Vout4 = (filter_val4/Max_res)*Vin;
-        float Res_PBGS_4 = Res1*Vout4/(Vin-Vout4);
+        float Res_PBGS_4 = Res1[3]*Vout4/(Vin-Vout4);
 
         float Vout5 = (filter_val5/Max_res)*Vin;
-        float Res_PBGS_5 = Res1*Vout5/(Vin-Vout5);
+        float Res_PBGS_5 = Res1[4]*Vout5/(Vin-Vout5);
 
         float Vout6 = (filter_val6/Max_res)*Vin;
-        float Res_PBGS_6 = Res1*Vout6/(Vin-Vout6); 
+        float Res_PBGS_6 = Res1[5]*Vout6/(Vin-Vout6); 
 
         printf("%f,",Res_PBGS_1);
         printf("%f,",Res_PBGS_2);
