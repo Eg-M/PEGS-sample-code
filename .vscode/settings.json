@@ -5,6 +5,7 @@
         "mstd_utility": "cpp",
         "functional": "cpp",
         "*.tcc": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "analogin_api.h": "c"
     }
 }
