@@ -26,7 +26,7 @@ AnalogIn adc_vref(ADC_VREF);
 //float Res1 = 1.775;
 float Vout[6] = {0.0f};
 float Res_PBGS[6] = {0.0f};
-float Res1[6] = {5.2419f, 5.234f, 5.234f, 5.258f, 5.1879f, 5.067f};
+float Res1[6] = {5.2419f, 5.213f, 5.244f, 5.268f, 5.1879f, 5.067f};
 //float filter_val1,filter_val2,filter_val3,filter_val4,filter_val5,filter_val6 = 0;
 float filter_val[6] = {0.0f};
 uint16_t Max_res = 0xFFFF;
