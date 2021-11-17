@@ -1,0 +1,47 @@
+// AUTOMATICALLY GENERATED FILE. PLEASE DO NOT MODIFY IT MANUALLY
+//
+// PIO Unified Debugger
+//
+// Documentation: https://docs.platformio.org/page/plus/debugging.html
+// Configuration: https://docs.platformio.org/page/projectconf/section_env_debug.html
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug",
+            "executable": "c:/Users/mecht/Documents/PlatformIO/Projects/l053r8_mbed/.pio/build/nucleo_l053r8/firmware.elf",
+            "projectEnvName": "nucleo_l053r8",
+            "toolchainBinDir": "C:/Users/mecht/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "internalConsoleOptions": "openOnSessionStart",
+            "svdPath": "C:/Users/mecht/.platformio/platforms/ststm32/misc/svd/STM32L053x.svd",
+            "preLaunchTask": {
+                "type": "PlatformIO",
+                "task": "Pre-Debug"
+            }
+        },
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug (skip Pre-Debug)",
+            "executable": "c:/Users/mecht/Documents/PlatformIO/Projects/l053r8_mbed/.pio/build/nucleo_l053r8/firmware.elf",
+            "projectEnvName": "nucleo_l053r8",
+            "toolchainBinDir": "C:/Users/mecht/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "internalConsoleOptions": "openOnSessionStart",
+            "svdPath": "C:/Users/mecht/.platformio/platforms/ststm32/misc/svd/STM32L053x.svd"
+        },
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug (without uploading)",
+            "executable": "c:/Users/mecht/Documents/PlatformIO/Projects/l053r8_mbed/.pio/build/nucleo_l053r8/firmware.elf",
+            "projectEnvName": "nucleo_l053r8",
+            "toolchainBinDir": "C:/Users/mecht/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "internalConsoleOptions": "openOnSessionStart",
+            "svdPath": "C:/Users/mecht/.platformio/platforms/ststm32/misc/svd/STM32L053x.svd",
+            "loadMode": "manual"
+        }
+    ]
+}
