@@ -53,7 +53,7 @@ int main()
         //printf("First_Sensor\n");
         //while (1)
         //{
-        if (!(t.read_ms() % 1000))
+        if (!(t.read_ms() % 600000))
         {
              vref12 = adc_vref.read_u16() >> 4;
              vref = (3.0f * (*VREFINT_CAL_ADDR) / vref12 );
